@@ -8,8 +8,10 @@ import random
 VOWELS = "aeiou"
 CONSONANTS = "bcdfghjklmnpqrstvwxyz"
 
-word_format = "ccvcvvc"
+word_format = input("Type in a random sequence of c and v: ").lower()
+
 word = ""
+
 for kind in word_format:
     if kind == "c":
         word += random.choice(CONSONANTS)

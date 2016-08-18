@@ -6,6 +6,16 @@ vice versa. The output of the program should look like (where g and 100 are user
 LOWER = 33
 UPPER = 127
 
+
+def get_number(lower, upper):
+    num = int(input("Enter a number between {} and {}: ".format(lower, upper)))
+
+    while upper < num < lower:
+        print("Invalid Number")
+        num = input("Enter a number between {} and {}: ".format(lower, upper))
+
+    return num
+
 char = input("Enter a character: ")
 
 while len(char) != 1:
@@ -16,13 +26,10 @@ ascii = ord(char)
 
 print("The ascii code for {} is {}".format(char, ascii))
 
-ascii = int(input("Enter a number between {} and {}: ".format(LOWER, UPPER)))
-
-while UPPER < ascii < LOWER:
-    print("Invalid Number")
-    char = input("Enter a number between {} and {}: ".format(LOWER, UPPER))
-
+ascii = get_number(LOWER, UPPER)
 char = chr(ascii)
+
+print("The character for code {} is {}".format(ascii, char))
 
 for i in range(33,128):
     print("{}{:>4}".format(i, chr(i)))
